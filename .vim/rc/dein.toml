@@ -100,14 +100,9 @@ depends = ['vim-fugitive']
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
 
-[[plugins]]
-repo = 'tyru/open-browser.vim'
-hook_add = '''
-    source ~/.vim/rc/plugins/openbrowser.rc.vim
-'''
-
-[[plugins]]
-repo = 'mattn/benchvimrc-vim'
+#for mac
+#[[plugins]]
+#repo = 'mattn/benchvimrc-vim'
 
 [[plugins]]
 repo = 'bronson/vim-trailing-whitespace'
