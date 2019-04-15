@@ -1,0 +1,129 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'vim-scripts/wombat256.vim'
+
+[[plugins]]
+repo = 'cocopon/iceberg.vim'
+
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+hook_add = 'source ~/.vim/rc/plugins/lightline.rc.vim'
+
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+hook_add = '''
+    let g:gitgutter_map_keys = 0
+    nmap [g <Plug>GitGutterPrevHunk
+    nmap ]g <Plug>GitGutterNextHunk
+'''
+
+[[plugins]]
+repo = 'machakann/vim-sandwich'
+hook_add = '''
+    nmap s <Nop>
+    xmap s <Nop>
+'''
+
+[[plugins]]
+repo = 'mattn/sonictemplate-vim'
+
+[[plugins]]
+repo = 'airblade/vim-rooter'
+hook_add = '''
+    let g:rooter_patterns = ['.git/']
+    let g:rooter_change_directory_for_non_project_files = 'current'
+    let g:rooter_use_lcd = 1
+'''
+
+[[plugins]]
+repo = 'rhysd/committia.vim'
+depends = ['vim-fugitive']
+hook_add = '''
+    let g:committia_hooks = {}
+    function! g:committia_hooks.edit_open(info)
+        " Additional settings
+        setlocal spell
+        setlocal spelllang+=cjk
+
+        " If no commit message, start with insert mode
+        if a:info.vcs ==# 'git' && getline(1) ==# ''
+            startinsert
+        end
+
+        " Scroll the diff window from insert mode
+        " Map <C-n> and <C-p>
+        imap <buffer><C-n> <Plug>(committia-scroll-diff-down-half)
+        imap <buffer><C-p> <Plug>(committia-scroll-diff-up-half)
+    endfunction
+'''
+
+[[plugins]]
+repo = 'vim-jp/vimdoc-ja'
+hook_add = '''
+    set helplang=ja,en
+'''
+
+[[plugins]]
+repo = 'liuchengxu/vim-which-key'
+hook_add = '''
+set timeoutlen=750
+nnoremap <silent> <Space>       :WhichKey '<Space>'<CR>
+nnoremap <silent> <Leader>      :WhichKey '<Leader>'<CR>
+nnoremap <silent> <LocalLeader> :WhichKey '<LocalLeader>'<CR>
+'''
+
+[[plugins]]
+repo = 'sheerun/vim-polyglot'
+hook_add = '''
+let g:vim_markdown_conceal = 0
+'''
+
+[[plugins]]
+repo = "majutsushi/tagbar"
+hook_add = '''
+    nnoremap <Space>g :<C-u>TagbarToggle<CR>
+'''
+
+[[plugins]]
+repo    = 'vim-airline/vim-airline'
+depends = ['vim-airline-themes']
+
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+
+[[plugins]]
+repo = 'Xuyuanp/nerdtree-git-plugin'
+depends = ['vim-fugitive']
+
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+
+[[plugins]]
+repo = 'tyru/open-browser.vim'
+hook_add = '''
+    source ~/.vim/rc/plugins/openbrowser.rc.vim
+'''
+
+[[plugins]]
+repo = 'mattn/benchvimrc-vim'
+
+[[plugins]]
+repo = 'bronson/vim-trailing-whitespace'
+hook_add = '''
+    nnoremap <silent> <Leader>w :FixWhitespace<CR>
+'''
+
+[[plugins]]
+repo = 'lambdalisue/vim-gista'
+hook_add = '''
+    let g:gista#client#default_username = 'lighttiger2505'
+'''
+
+[[plugins]]
+repo = 'osyo-manga/vim-precious'
+depends = ['context_filetype']
+
+[[plugins]]
+repo = 'Shougo/context_filetype.vim'

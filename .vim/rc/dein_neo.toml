@@ -1,0 +1,75 @@
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+if = "has('nvim')"
+on_event = 'InsertCharPre'
+build = ':UpdateRemotePlugins'
+depends = ['neosnippet.vim']
+hook_add = '''
+let g:deoplete#enable_at_startup = 1
+'''
+hook_source = 'source ~/.vim/rc/plugins/deoplete.rc.vim'
+
+[[plugins]]
+repo = 'Shougo/neosnippet.vim'
+depends = ['neosnippet-snippets']
+hook_source = '''
+" Plugin key-mappings.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+" SuperTab like snippets behavior.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+"imap <expr><TAB>
+" \ pumvisible() ? "\<C-n>" :
+" \ neosnippet#expandable_or_jumpable() ?
+" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+" For conceal markers.
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif
+'''
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+
+[[plugins]]
+repo = 'Shougo/denite.nvim'
+if = "has('nvim')"
+on_cmd = 'Denite'
+build = ':UpdateRemotePlugins'
+hook_add = '''
+    " Key Mapping Prefix key
+    nmap [denite] <Nop>
+    map <C-j> [denite]
+
+    " Current direcotry files
+    nnoremap <silent> [denite]<C-p> :<C-u>Denite file/rec/git -highlight-mode-insert=Search<CR>
+    " Buffer files
+    nnoremap <silent> [denite]<C-b> :<C-u>Denite buffer -highlight-mode-insert=Search<CR>
+    " Outline current file
+    nnoremap <silent> [denite]<C-o> :<C-u>Denite outline -highlight-mode-insert=Search<CR>
+    " Reccent file
+    nnoremap <silent> [denite]<C-r> :<C-u>Denite file_old -highlight-mode-insert=Search<CR>
+    " Help tag
+    nnoremap <silent> [denite]<C-h> :<C-u>Denite help -highlight-mode-insert=Search<CR>
+'''
+hook_source = 'source ~/.vim/rc/plugins/denite.rc.vim'
+
+[[plugins]]
+repo = 'zchee/deoplete-clang'
+on_ft = ['c', 'h']
+depends = ['deoplete.nvim']
+
+[[plugins]]
+repo = 'zchee/deoplete-zsh'
+on_ft = ['zsh']
+depends = ['deoplete.nvim']
+
+repo = 'Shougo/neco-vim'
+on_ft = ['vim']
+depends = ['deoplete.nvim']

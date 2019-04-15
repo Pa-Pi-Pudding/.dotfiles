@@ -1,0 +1,5 @@
+--append=no
+--recurse=yes
+--python-kinds=-iv
+--exclude=*.js
+--exclude=vendor

@@ -1,0 +1,233 @@
+#####################################################################
+# Edit util
+#####################################################################
+[[plugins]]
+repo = 'junegunn/vim-easy-align'
+on_map = ['<Plug>(EasyAlign)']
+hook_add = '''
+    vmap <Enter> <Plug>(EasyAlign)
+'''
+
+[[plugins]]
+repo = 'haya14busa/vim-asterisk'
+on_map = [
+    '<Plug>(asterisk-z*)',
+    '<Plug>(asterisk-z#)',
+    '<Plug>(asterisk-gz*)',
+    '<Plug>(asterisk-gz#)',
+]
+hook_add = '''
+    map *  <Plug>(asterisk-z*)
+    map #  <Plug>(asterisk-z#)
+    map g* <Plug>(asterisk-gz*)
+    map g# <Plug>(asterisk-gz#)
+'''
+
+[[plugins]]
+repo = 'Yggdroot/indentLine'
+on_cmd = ['IndentLinesToggle']
+hook_add = '''
+    let g:loaded_indentLine = 1
+    nnoremap <Space>i <C-u>:IndentLinesToggle<CR>
+'''
+
+[[plugins]]
+repo = 'mattn/vim-sqlfmt'
+on_ft = ['sql']
+on_map = ['<Plug>(sqlfmt)']
+on_cmd = ['SQLFmt']
+hook_add = '''
+let sqlfmt_bin = fnamemodify(g:python3_host_prog, ':h') . '/' . '/sqlformat'
+let g:sqlfmt_program = sqlfmt_bin . ' -r -k upper -o %s -'
+'''
+
+#####################################################################
+# Programing util
+#####################################################################
+[[plugins]]
+repo = 'tyru/caw.vim'
+on_map = ['<Plug>(caw:hatpos:toggle)', '<Plug>(caw:zeropos:toggle)']
+hook_add = '''
+    " Add comment to beginning line(consider whitespace)
+    nmap <Leader>c <Plug>(caw:hatpos:toggle)
+    vmap <Leader>c <Plug>(caw:hatpos:toggle)
+    " Add comment to beginning line(ignore whitespace)
+    nmap <Leader>, <Plug>(caw:zeropos:toggle)
+    vmap <Leader>, <Plug>(caw:zeropos:toggle)
+'''
+
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+depends = ['vimproc.vim']
+on_ft = ['python', 'go']
+hook_source = '''
+  source ~/.vim/rc/plugins/vimquickrun.rc.vim
+'''
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+hook_add = '''
+let NERDTreeShowHidden=1
+nnoremap <silent> <Leader>t :<C-u>NERDTreeToggle<CR>
+nnoremap <silent> <Leader>f :<C-u>NERDTreeFind %<CR>
+'''
+
+[[plugins]]
+repo = 'albfan/nerdtree-git-plugin'
+depends = ['vim-fugitive']
+
+[[plugins]]
+repo = 'w0rp/ale'
+on_ft = [
+    'go',
+    'python',
+    'javascript',
+    'html',
+    'css',
+    'markdown',
+    'make',
+    'vim',
+    'terraform',
+    'zsh',
+    'sh',
+    'ansible',
+    'json',
+]
+hook_source = '''
+    source ~/.vim/rc/plugins/ale.rc.vim
+'''
+
+[[plugins]]
+repo = 'jsfaint/gen_tags.vim'
+on_ft = ['python', 'go', 'vim']
+hook_source = '''
+let g:gen_tags#ctags_auto_gen = 1
+'''
+
+[[plugins]]
+repo = 'majutsushi/tagbar'
+on_cmd = ['TagbarToggle']
+hook_add = '''
+    nnoremap <Leader>o :<C-u>TagbarToggle<CR>
+    let g:tagbar_sort = 0
+    let g:tagbar_case_insensitive = 1
+    let g:tagbar_compact = 1
+'''
+
+[[plugins]]
+repo = 'rhysd/reply.vim'
+on_cmd = ['Repl', 'ReplAuto']
+
+#####################################################################
+# Fuzzy Finder
+#####################################################################
+
+[[plugins]]
+repo = 'junegunn/fzf'
+build = './install --all'
+
+[[plugins]]
+repo = 'junegunn/fzf.vim'
+depends = ['fzf']
+on_cmd = [
+  'Files',
+  'GFiles',
+  'Tags',
+]
+hook_add = '''
+" Appearance
+let g:fzf_layout = {'down': '~50%'}
+
+" Gather files recursive and nominates all file names under the search directory
+nnoremap <silent> <C-j><C-j> :<C-u>Files<CR>
+" Git Status
+nnoremap <silent> <C-j><C-g> :<C-u>GFiles?<CR>
+" Ctags index project
+nnoremap <silent> <C-j><C-]> :<C-u>Tags<CR>
+" My cli setting
+nnoremap <silent> <C-j><C-v> :<C-u>Files ~/.dotfiles<CR>
+'''
+
+#####################################################################
+# Other Util
+#####################################################################
+[[plugins]]
+repo = 'kannokanno/previm'
+depends = ['open-browser.vim']
+on_cmd = ['PrevimOpen']
+hook_add = '''
+    nnoremap <leader>p :PrevimOpen<CR>
+'''
+
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+build = 'make'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+on_cmd = [
+  'Git',
+  'Gcommit',
+  'Gstatus',
+  'Gdiff',
+  'Gblame',
+  'Glog'
+]
+hook_add = '''
+    nmap [figitive] <Nop>
+    map <Leader>g [figitive]
+    nnoremap <silent> [figitive]c :<C-u>Gcommit<CR>
+    nnoremap <silent> [figitive]d :<C-u>Gdiff<CR>
+    nnoremap <silent> [figitive]b :<C-u>Gblame<CR>
+    nnoremap <silent> [figitive]l :<C-u>Glog<CR>
+'''
+
+[[plugins]]
+repo = 'tyru/open-browser.vim'
+on_map = ['<Plug>(openbrowser-smart-search)']
+hook_add = '''
+    let g:netrw_nogx = 1 " disable netrw's gx mapping.
+    nmap <Leader>b <Plug>(openbrowser-smart-search)
+    vmap <Leader>b <Plug>(openbrowser-smart-search)
+'''
+
+[[plugins]]
+repo = 'lighttiger2505/lab.vim'
+on_cmd = [
+    'LabBrowse',
+    'LabBrowseFile',
+    'LabIssue',
+    'LabMergeRequest',
+]
+hook_add = '''
+    nnoremap <Leader>lb :<C-u>LabBrowse<CR>
+    nnoremap <Leader>lf :<C-u>LabBrowseFile<CR>
+    vnoremap <Leader>lf :<C-u>LabBrowseFile<CR>
+    nnoremap <Leader>li :<C-u>LabIssue<CR>
+    nnoremap <Leader>lm :<C-u>LabMergeRequest<CR>
+'''
+
+[[plugins]]
+repo = 'lighttiger2505/liary.vim'
+on_cmd = [
+    'Liary',
+    'LiarySplit',
+    'LiaryVSplit',
+    'LiaryTab',
+]
+
+[[plugins]]
+repo = 'echuraev/translate-shell.vim'
+on_cmd = ['Trans', 'TransVisual']
+hook_add = '''
+nnoremap <silent> <leader>se :Trans :en+ja<CR>
+vnoremap <silent> <leader>se :Trans :en+ja<CR>
+nnoremap <silent> <leader>sj :Trans :ja+en<CR>
+vnoremap <silent> <leader>sj :Trans :ja+en<CR>
+'''
+
+[[plugins]]
+# 括弧補完
+repo = 'cohama/lexima.vim'
+on_i = 1
+
