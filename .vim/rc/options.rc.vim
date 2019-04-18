@@ -106,7 +106,6 @@ else
 endif
 set clipboard=unnamedplus
 " Disable fold
-set nofoldenable
 
 " Use extend grep
 if executable('rg')
@@ -174,3 +173,4 @@ augroup TransparentBG
 augroup END
 "---------------------------------------------
 
+set wildmenu
