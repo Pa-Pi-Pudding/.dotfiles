@@ -8,5 +8,6 @@ brew tap motemen/ghq
 brew install zsh
 brew install pt
 brew install ghq
+brew install go
 brew install global --with-exuberant-ctags --with-pygments
 brew install universal-ctags

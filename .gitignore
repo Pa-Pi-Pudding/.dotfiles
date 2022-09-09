@@ -4,3 +4,5 @@
 .vim/bundle/neobundle.vim
 .DS_Store
 .vim/DS_Store
+.gitconfig
+.vim/.gitconfig
