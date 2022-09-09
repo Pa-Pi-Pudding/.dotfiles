@@ -12,6 +12,7 @@ $ make init
 - vim
 - neovim
 - zsh
+- go
 - pyenv
 - pyenv-vertualenv
 - tmux
@@ -21,12 +22,12 @@ $ make init
 
 ```bash
 # Install python version
-pyenv install 2.7.12 # latest version
-pyenv install 3.4.5 # latest version
+pyenv install 2.7.18 # latest version
+pyenv install 3.10.6 # latest version
 
 # Create pyenv-vertualevn for neovim reference
-pyenv virtualenv 2.7.12 neovim2
-pyenv virtualenv 3.4.5 neovim3
+pyenv virtualenv 2.7.18 neovim2
+pyenv virtualenv 3.10.6 neovim3
 
 # Install neovim client and requirement middle 
 pyenv activate neovim2

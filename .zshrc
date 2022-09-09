@@ -41,8 +41,8 @@ if [ -e ~/.anyenv ]; then
     eval "$(anyenv init -)"
 fi
 
-eval $(ssh-agent) > /dev/null
-ssh-add ~/.ssh/id_rsa > /dev/null 2>&1
+#eval $(ssh-agent) > /dev/null
+#ssh-add ~/.ssh/id_rsa > /dev/null 2>&1
 
 # zprof end
 if (which zprof > /dev/null 2>&1) ;then
@@ -52,3 +52,4 @@ fi
 if [ -f ~/.fzf.zsh ]; then
     source ~/.fzf.zsh
 fi
+PATH=/Users/kyuchida/.pyenv/shims:/Users/kyuchida/Library/Java/JavaVirtualMachines/corretto-18.0.2/Contents/Home/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Users/kyuchida/Library/Java/JavaVirtualMachines/corretto-18.0.2/Contents/Home/bin:/Users/kyuchida/.cache/dein/repos/github.com/junegunn/fzf/bin:/Users/kyuchida/Library/Java/JavaVirtualMachines/corretto-18.0.2/Contents/Home/bin
