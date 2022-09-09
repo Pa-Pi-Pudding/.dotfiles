@@ -34,7 +34,7 @@ repo = 'airblade/vim-rooter'
 hook_add = '''
     let g:rooter_patterns = ['.git/']
     let g:rooter_change_directory_for_non_project_files = 'current'
-    let g:rooter_use_lcd = 1
+   let g:rooter_cd_cmd="lcd"
 '''
 
 [[plugins]]
@@ -81,12 +81,6 @@ let g:vim_markdown_conceal = 0
 '''
 
 [[plugins]]
-repo = "majutsushi/tagbar"
-hook_add = '''
-    nnoremap <Space>g :<C-u>TagbarToggle<CR>
-'''
-
-[[plugins]]
 repo    = 'vim-airline/vim-airline'
 depends = ['vim-airline-themes']
 
@@ -97,12 +91,9 @@ repo = 'vim-airline/vim-airline-themes'
 repo = 'Xuyuanp/nerdtree-git-plugin'
 depends = ['vim-fugitive']
 
-[[plugins]]
-repo = 'airblade/vim-gitgutter'
-
 #for mac
-#[[plugins]]
-#repo = 'mattn/benchvimrc-vim'
+[[plugins]]
+repo = 'mattn/benchvimrc-vim'
 
 [[plugins]]
 repo = 'bronson/vim-trailing-whitespace'
@@ -116,9 +107,3 @@ hook_add = '''
     let g:gista#client#default_username = 'lighttiger2505'
 '''
 
-[[plugins]]
-repo = 'osyo-manga/vim-precious'
-depends = ['context_filetype']
-
-[[plugins]]
-repo = 'Shougo/context_filetype.vim'

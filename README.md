@@ -12,7 +12,6 @@ $ make init
 - vim
 - neovim
 - zsh
-- zplug
 - pyenv
 - pyenv-vertualenv
 - tmux
