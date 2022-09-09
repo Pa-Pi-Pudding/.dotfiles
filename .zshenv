@@ -51,7 +51,7 @@ $ANYENV_PATH/bin(N-/)
 )
 
 # Go root
-export GOROOT=$(go env GOROOT)
+# export GOROOT=$(go env GOROOT)
 
 # Sudo path
 typeset -xT SUDO_PATH sudo_path

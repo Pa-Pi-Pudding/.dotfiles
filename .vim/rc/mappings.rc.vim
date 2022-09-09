@@ -5,10 +5,6 @@ let g:maplocalleader = '\'
 " Ctrl + c = ESC for rectangle selection
 inoremap <C-c> <ESC>
 
-" Switch colon and semicolon
-noremap ; :
-noremap : ;
-
 " Multi line move
 noremap k gk
 noremap j gj

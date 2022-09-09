@@ -2,3 +2,5 @@
 .vim/dein/
 .netrwhist
 .vim/bundle/neobundle.vim
+.DS_Store
+.vim/DS_Store

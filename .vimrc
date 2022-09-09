@@ -42,14 +42,14 @@ if !isdirectory(expand($CACHE))
 endif
 
 " Load python3
-" if isdirectory(expand($PYENV_PATH))
-"     let g:python_host_prog = $PYENV_PATH . '/versions/neovim2/bin/python'
-"     let g:python3_host_prog = $PYENV_PATH . '/versions/neovim3/bin/python'
-" endif
-" if isdirectory(expand($ANYENV_PATH))
-"     let g:python_host_prog = $ANYENV_PATH . '/envs/pyenv/versions/neovim2/bin/python'
-"     let g:python3_host_prog = $ANYENV_PATH . '/envs/pyenv/versions/neovim3/bin/python'
-" endif
+ if isdirectory(expand($PYENV_PATH))
+     let g:python_host_prog = $PYENV_PATH . '/versions/neovim2/bin/python'
+     let g:python3_host_prog = $PYENV_PATH . '/versions/neovim3/bin/python'
+ endif
+ if isdirectory(expand($ANYENV_PATH))
+     let g:python_host_prog = $ANYENV_PATH . '/envs/pyenv/versions/neovim2/bin/python'
+     let g:python3_host_prog = $ANYENV_PATH . '/envs/pyenv/versions/neovim3/bin/python'
+ endif
 
 " Load dein.
 let s:dein_dir = finddir('dein.vim', '.;')
@@ -65,11 +65,11 @@ if s:dein_dir !=# '' || &runtimepath !~# '/dein.vim'
         \ fnamemodify(s:dein_dir, ':p') , '/$', '', '')
 endif
 
-call s:source_rc('mappings.rc.vim')
-call s:source_rc('options.rc.vim')
-call s:source_rc('filetype.rc.vim')
-call s:source_rc('autocmd.rc.vim')
-call s:source_rc('dein.rc.vim')
+ call s:source_rc('mappings.rc.vim')
+ call s:source_rc('options.rc.vim')
+ call s:source_rc('filetype.rc.vim')
+ call s:source_rc('autocmd.rc.vim')
+ call s:source_rc('dein.rc.vim')
 
 " Reload .vimrc
 nnoremap <Space>s :source $HOME/.vimrc<CR>
@@ -85,9 +85,9 @@ syntax enable
 
 " インストールされていないプラグインがあればgithub.comからインストールする
 " If you want to install not installed plugins on startup.
-if dein#check_install()
-  call dein#install()
-endif
+ if dein#check_install()
+   call dein#install()
+ endif
 " パワーラインでかっこよく
 let g:airline_powerline_fonts = 1
 " カラーテーマ指定してかっこよく

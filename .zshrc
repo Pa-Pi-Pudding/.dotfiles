@@ -20,9 +20,7 @@ source ~/.zsh/prompt.zsh
 source ~/.zsh/fzf.zsh
 source ~/.zsh/alias.zsh
 source ~/.zsh/keybind.zsh
-source ~/.zsh/zplugin.zsh
 source ~/.zsh/completion.zsh
-
 
 # Python
 # Init pyenv
