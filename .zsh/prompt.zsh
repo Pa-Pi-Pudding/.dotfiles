@@ -6,10 +6,6 @@ autoload -Uz terminfo
 setopt prompt_subst
 setopt re_match_pcre
 
-# function current-git-branch() {
-#     echo -n "$(git rev-parse --abbrev-ref=loose HEAD 2> /dev/null)"
-# }
-
 # ブランチ名を色付きで表示させるメソッド
 function rprompt-git-current-branch {
   local branch_name st branch_status
@@ -22,7 +18,7 @@ function rprompt-git-current-branch {
   st=`git status 2> /dev/null`
   if [[ -n `echo "$st" | grep "^nothing to"` ]]; then
     # 全てcommitされてクリーンな状態
-    branch_status="%F{green}"
+    branch_status="%F{magenta}"
   elif [[ -n `echo "$st" | grep "^Untracked files"` ]]; then
     # gitに管理されていないファイルがある状態
     branch_status="%F{red}?"
@@ -44,8 +40,6 @@ function rprompt-git-current-branch {
   echo "${branch_status}[$branch_name]"
 }
 
-# プロンプトの右側(RPROMPT)にメソッドの結果を表示させる
-# RPROMPT='`rprompt-git-current-branch`'
 
 # function python-version() {
 #     pv="PV:$(pyenv version-name) "
@@ -80,7 +74,6 @@ function zle-keymap-select zle-line-init zle-line-finish
     local p_cdr="%F{cyan}%~%f"
     local p_vimjob="%F{green}$([[ $(jobs|grep -c vim) != 0 ]] && print "vim:$(jobs|grep -c vim)")%f"
     local p_tigjob="%F{green}$([[ $(jobs|grep -c tig) != 0 ]] && print "tigvim:$(jobs|grep -c tig)")%f"
-    #local p_branch="{%F{magenta}$(current-git-branch)%f}"
     local p_branch="$(rprompt-git-current-branch)%f}"
     local p_mark="%B%(?,%F{green},%F{red})%(!,#,>)%f%b"
     # local p_pversion="%F{red}$(python-version)%f"
