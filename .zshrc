@@ -1,5 +1,10 @@
 #!/usr/local/bin/zsh
+#
+PATH=/Users/kyuchida/.pyenv/shims:/Users/kyuchida/Library/Java/JavaVirtualMachines/corretto-18.0.2/Contents/Home/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Users/kyuchida/Library/Java/JavaVirtualMachines/corretto-18.0.2/Contents/Home/bin:/Users/kyuchida/.cache/dein/repos/github.com/junegunn/fzf/bin:/Users/kyuchida/Library/Java/JavaVirtualMachines/corretto-18.0.2/Contents/Home/bin
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 # zprof start
 # zmodload zsh/zprof && zprof
 
@@ -50,6 +55,5 @@ if (which zprof > /dev/null 2>&1) ;then
 fi
 
 if [ -f ~/.fzf.zsh ]; then
-    source ~/.fzf.zsh
+    source ~/.zsh/fzf.zsh
 fi
-PATH=/Users/kyuchida/.pyenv/shims:/Users/kyuchida/Library/Java/JavaVirtualMachines/corretto-18.0.2/Contents/Home/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Users/kyuchida/Library/Java/JavaVirtualMachines/corretto-18.0.2/Contents/Home/bin:/Users/kyuchida/.cache/dein/repos/github.com/junegunn/fzf/bin:/Users/kyuchida/Library/Java/JavaVirtualMachines/corretto-18.0.2/Contents/Home/bin

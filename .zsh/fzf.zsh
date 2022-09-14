@@ -4,12 +4,12 @@ export FZF_DEFAULT_OPTS='--height 50% --reverse --border'
 
 # Move repository dir of ghq managenemt
 function cd-fzf-ghqlist() {
-    local GHQ_ROOT=`ghq root`
-    local REPO=`ghq list -p | sed -e 's;'${GHQ_ROOT}/';;g' |fzf +m`
-    if [ -n "${REPO}" ]; then
-        BUFFER="cd ${GHQ_ROOT}/${REPO}"
-    fi
+  local src=$(ghq list | fzf --preview "ls -laTp $(ghq root)/{} | tail -n+4 | awk '{print \$9\"/\"\$6\"/\"\$7 \" \" \$10}'")
+  if [ -n "$src" ]; then
+    BUFFER="cd $(ghq root)/$src"
     zle accept-line
+  fi
+  zle -R -c
 }
 zle -N cd-fzf-ghqlist
 bindkey '^G' cd-fzf-ghqlist
