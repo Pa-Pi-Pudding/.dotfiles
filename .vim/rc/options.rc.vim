@@ -105,6 +105,7 @@ else
     set clipboard=unnamed
 endif
 set clipboard=unnamedplus
+set clipboard+=unnamed
 " Disable fold
 
 " Use extend grep
