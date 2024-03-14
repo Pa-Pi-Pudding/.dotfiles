@@ -4,7 +4,7 @@ export PATH="$PATH:$GOPATH/bin"
 export GOENV_ROOT="$HOME/.goenv"
 export PATH="$GOENV_ROOT/bin:$PATH"
 export PATH="$PATH:$(go env GOPATH)/bin"
-PATH=/Users/kyuchida/.pyenv/shims:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Users/kyuchida/.cache/dein/repos/github.com/junegunn/fzf/bin
+PATH=$HOME/.pyenv/shims:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:$HOME/.cache/dein/repos/github.com/junegunn/fzf/bin
 export NVM_DIR="$HOME/.nvm"
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
@@ -67,4 +67,3 @@ fi
 if [ -f ~/.fzf.zsh ]; then
     source ~/.zsh/fzf.zsh
 fi
-
