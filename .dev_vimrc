@@ -9,10 +9,10 @@ Plug 'scrooloose/nerdtree'
 Plug 'Shougo/denite.nvim'
 
 " LSP
-Plug 'prabirshrestha/async.vim'
-Plug 'prabirshrestha/vim-lsp'
-Plug 'Shougo/deoplete.nvim'
-Plug 'lighttiger2505/deoplete-vim-lsp'
+" Plug 'prabirshrestha/async.vim'
+" Plug 'prabirshrestha/vim-lsp'
+" Plug 'Shougo/deoplete.nvim'
+" Plug 'lighttiger2505/deoplete-vim-lsp'
 
 " Syntax
 Plug 'sheerun/vim-polyglot'
@@ -91,45 +91,45 @@ call deoplete#enable_logging('INFO', 'deoplete.log')
 " }}}
 
 " vim-lsp {{{
-if (executable('bingo'))
-    augroup LspGo
-        autocmd!
-        autocmd User lsp_setup call lsp#register_server({
-        \ 'name': 'go-lang',
-        \ 'cmd': {server_info->['bingo', '-disable-func-snippet', '-mode', 'stdio']},
-        \ 'whitelist': ['go'],
-        \ })
-    augroup END
-endif
-
-augroup GoLspCommands
-    autocmd!
-    " TODO 
-    " start golsp when enter python file
-    autocmd BufWinEnter *.go :call lsp#enable()
-    " local key mapping
-    autocmd FileType go nnoremap <C-]> :<C-u>LspDefinition<CR>
-    autocmd FileType go nnoremap K :<C-u>LspHover<CR>
-    autocmd FileType go nnoremap <LocalLeader>R :<C-u>LspRename<CR>
-    autocmd FileType go nnoremap <LocalLeader>n :<C-u>LspReferences<CR>
-augroup END
-
-" vim-lsp debuging
-let g:lsp_log_verbose = 1
-let g:lsp_log_file = expand('~/vim-lsp.log')
-" }}}
-
-" }}}
-
-" Load python
-if isdirectory(expand($PYENV_PATH))
-    let g:python_host_prog = $PYENV_PATH . '/versions/neovim2/bin/python'
-    let g:python3_host_prog = $PYENV_PATH . '/versions/neovim3/bin/python'
-endif
-if isdirectory(expand($ANYENV_PATH))
-    let g:python_host_prog = $ANYENV_PATH . '/envs/pyenv/versions/neovim2/bin/python'
-    let g:python3_host_prog = $ANYENV_PATH . '/envs/pyenv/versions/neovim3/bin/python'
-endif
+" if (executable('bingo'))
+"     augroup LspGo
+"         autocmd!
+"         autocmd User lsp_setup call lsp#register_server({
+"         \ 'name': 'go-lang',
+"         \ 'cmd': {server_info->['bingo', '-disable-func-snippet', '-mode', 'stdio']},
+"         \ 'whitelist': ['go'],
+"         \ })
+"     augroup END
+" endif
+" 
+" augroup GoLspCommands
+"     autocmd!
+"     " TODO 
+"     " start golsp when enter python file
+"     autocmd BufWinEnter *.go :call lsp#enable()
+"     " local key mapping
+"     autocmd FileType go nnoremap <C-]> :<C-u>LspDefinition<CR>
+"     autocmd FileType go nnoremap K :<C-u>LspHover<CR>
+"     autocmd FileType go nnoremap <LocalLeader>R :<C-u>LspRename<CR>
+"     autocmd FileType go nnoremap <LocalLeader>n :<C-u>LspReferences<CR>
+" augroup END
+" 
+" " vim-lsp debuging
+" let g:lsp_log_verbose = 1
+" let g:lsp_log_file = expand('~/vim-lsp.log')
+" " }}}
+" 
+" " }}}
+" 
+" " Load python
+" if isdirectory(expand($PYENV_PATH))
+"     let g:python_host_prog = $PYENV_PATH . '/versions/neovim2/bin/python'
+"     let g:python3_host_prog = $PYENV_PATH . '/versions/neovim3/bin/python'
+" endif
+" if isdirectory(expand($ANYENV_PATH))
+"     let g:python_host_prog = $ANYENV_PATH . '/envs/pyenv/versions/neovim2/bin/python'
+"     let g:python3_host_prog = $ANYENV_PATH . '/envs/pyenv/versions/neovim3/bin/python'
+" endif
 
 " other vimrc source util
 function! s:source_rc(path, ...) abort 

@@ -87,10 +87,6 @@ depends = ['vim-airline-themes']
 [[plugins]]
 repo = 'vim-airline/vim-airline-themes'
 
-[[plugins]]
-repo = 'Xuyuanp/nerdtree-git-plugin'
-depends = ['vim-fugitive']
-
 #for mac
 [[plugins]]
 repo = 'mattn/benchvimrc-vim'

@@ -1,2 +1,10 @@
 alias ls="ls -G"
 export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:$MANPATH
+
+alias flctl='flctl --kubeconfig=$HOME/.zap/zap-config'
+
+
+
+
+
+

@@ -1,13 +1,13 @@
-[[plugins]]
-repo = 'prabirshrestha/vim-lsp'
-on_ft = ['python', 'go']
-hook_source = '''
-source ~/.vim/rc/plugins/lsp.rc.vim
-'''
+# [[plugins]]
+# repo = 'prabirshrestha/vim-lsp'
+# on_ft = ['python', 'go']
+# hook_source = '''
+# source ~/.vim/rc/plugins/lsp.rc.vim
+# '''
 
 #[[plugins]]
 #repo = 'mattn/vim-lsp-settings'
 
-[[plugins]]
-repo = 'lighttiger2505/deoplete-vim-lsp'
-on_ft = ['python', 'go']
+#[[plugins]]
+#repo = 'lighttiger2505/deoplete-vim-lsp'
+#on_ft = ['python', 'go']

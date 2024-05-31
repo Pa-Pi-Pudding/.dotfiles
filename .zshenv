@@ -28,10 +28,12 @@ path=(
 /usr/local/bin(N-/)
 /usr/bin(N-/)
 /bin(N-/)
+/opt/homebrew/bin(N-/)
 # sbin
 /usr/local/sbin(N-/)
 /usr/sbin(N-/)
 /sbin(N-/)
+/opt/homebrew/sbin(N-/)
 #gnubin
 /usr/local/opt/coreutils/libexec/gnubin(N-/)
 # Java
