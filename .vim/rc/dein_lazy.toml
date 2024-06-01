@@ -65,13 +65,13 @@ hook_source = '''
   source ~/.vim/rc/plugins/vimquickrun.rc.vim
 '''
 
-[[plugins]]
-repo = 'scrooloose/nerdtree'
-hook_add = '''
-let NERDTreeShowHidden=1
-nnoremap <silent> <Leader>t :<C-u>NERDTreeToggle<CR>
-nnoremap <silent> <Leader>f :<C-u>NERDTreeFind %<CR>
-'''
+#[[plugins]]
+#repo = 'scrooloose/nerdtree'
+#hook_add = '''
+#let NERDTreeShowHidden=1
+#nnoremap <silent> <Leader>t :<C-u>NERDTreeToggle<CR>
+#nnoremap <silent> <Leader>f :<C-u>NERDTreeFind %<CR>
+#'''
 
 [[plugins]]
 repo = 'albfan/nerdtree-git-plugin'

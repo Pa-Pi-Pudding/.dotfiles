@@ -58,3 +58,9 @@ if [ -f ~/.fzf.zsh ]; then
 fi
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
+export LESSCHARSET=utf-8
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0.0
